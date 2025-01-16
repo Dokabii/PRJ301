@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author admin
  */
-@WebServlet(urlPatterns = {"/LoginServlet"})
-public class LoginServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/MainController"})
+public class MainController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,22 +31,27 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            //get paramaters
-            String username = request.getParameter("txtUsername");
-            String password = request.getParameter("txtPassword");
-            out.println("Username: " + username);
-            out.println("<br/>"); // Sửa lỗi xuống dòng ở đây
-            out.println("Password: " + password);
-            out.println("</body>");
-            out.println("</html>");
+        PrintWriter out = response.getWriter();
+        /* TODO output your page here. You may use following sample code. */
+        String txtUsername = request.getParameter("txtUsername");
+        String txtPassword = request.getParameter("txtPassword");
+
+        if (txtUsername.trim().length() == 0) {
+            out.println("Pls enter username");
+            return;
+        }
+
+        if (txtPassword.trim().length() == 0 || txtPassword.trim().length() < 8) {
+            out.println("Pasword must be greate than 8 character!");
+            return;
+        }
+
+        if (txtUsername.equals("admin") && txtPassword.equals("12345678")) {
+            out.println("Login sucessful!");
+            return;
+        } else {
+            out.println("Username or password invalid!");
+            return;
         }
     }
 
