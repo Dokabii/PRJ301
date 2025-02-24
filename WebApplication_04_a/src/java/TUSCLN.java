@@ -76,7 +76,7 @@ public class TUSCLN extends HttpServlet {
             return;
         }
         
-        int result = GCD(a,b)
+        int result = GCD(a,b);
                 
 //            double a = Double.parseDouble(txtA);
 //            double b = Double.parseDouble(txtB);
