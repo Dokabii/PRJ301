@@ -79,7 +79,7 @@ body {
     background: transparent;
 }
 
-.search-btn {
+.search-bar button {
     border: none;
     background: none;
     cursor: pointer;
@@ -88,9 +88,9 @@ body {
     align-items: center;
 }
 
-.search-btn img {
-    width: 24px;  /* Điều chỉnh kích thước ảnh */
-    height: 24px;
+.search-bar img {
+    width: 10px;  /* Điều chỉnh kích thước ảnh */
+    height: auto;
 }
 
 

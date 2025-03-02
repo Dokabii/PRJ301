@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="assets/CSS/style.css">
+<link rel="stylesheet" href="assets/CSS/Header.css">
 <!DOCTYPE html>
 <html lang="vi">
     <head>
@@ -49,14 +49,14 @@
         <header class="main-header">
             <div class="container">
                 <div class="logo" >
-                    <img src="assets/images/logo.jpg">
+                    <img src="assets/images/logo.PNG">
                 </div>
                 <div class="menu-search">
                     <div class="category">
                         <button>☰ DANH MỤC</button>
                     </div>
                     <div class="search-bar">
-                        <button class="search-btn">
+                        <button>
                             <img src="assets/images/search.png" alt="Tìm kiếm">
                         </button>
                         <input type="text" placeholder="Bạn cần tìm gì?">
