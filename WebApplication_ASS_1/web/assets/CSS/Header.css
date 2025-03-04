@@ -24,6 +24,7 @@ body {
     background-color: #f5f5f5; /* Màu nền theo ý bạn */
 }
 
+
 /* 🌿 CSS cho thanh header trên cùng */
 .top-header {
     background-color: #269576;
@@ -37,9 +38,6 @@ body {
     align-items: center;
     margin: 0 auto;
     padding: 0 30px; /* Giảm khoảng cách 2 bên */
-    /* Để popup định vị theo .container, có thể thêm position: relative; 
-       Hoặc thêm trực tiếp inline style: <div class="container" style="position: relative;"> 
-    */
 }
 
 /* 🌿 CSS cho header chính */
@@ -55,9 +53,10 @@ body {
     align-items: center;
     margin: 0 auto;
     padding: 0 120px; /* Giảm khoảng cách 2 bên */
+
 }
 
-.category button {
+.category button{
     background: #269576;
     padding: 15px;
     border-radius: 7px;
@@ -99,6 +98,7 @@ body {
     height: auto;
 }
 
+
 .cart {
     display: flex;
     align-items: center;
@@ -110,12 +110,14 @@ body {
     font-weight: bold; /* In đậm chữ */
 }
 
+
+
 .logo img {
     height: 135px; 
     width: auto;
 }
 
-.cart img {
+.cart img{
     height: 37px;
     width: auto;
 }
@@ -136,7 +138,8 @@ body {
     color: inherit; /* Dùng màu chữ của phần tử cha */
 }
 
-.social-links img {
+
+.social-links img{
     height: 26px;
     width: auto;
     padding-right: 8px;
@@ -153,8 +156,7 @@ body {
     flex-wrap: nowrap; 
     gap: 10px;
 }
-
-.right a {
+.right a{
     display: flex;
     flex-wrap: nowrap; 
     align-items: center; 
@@ -163,7 +165,7 @@ body {
     color: white;
 }
 
-.right img {
+.right img{
     height: 30px;
     width: auto;
     padding-right: 3px;
@@ -195,7 +197,7 @@ body {
     gap: 10px;
 }
 
-.phone {
+.phone{
     display: flex;
     align-content: center;
     justify-content: center;
@@ -228,16 +230,18 @@ body {
 
 .phone-info span {
     font-size: 14px;
-    color: #2c8d72; /* Màu xanh */
+    color: #2c8d72; /* Màu xanh giống hình 1 */
 }
 
 .phone-info a {
     text-decoration: none;
     color: darkslategrey;
     font-weight: bold;
+
+
 }
 
-.shake img {
+.shake img{
     animation: shake 0.7s infinite alternate;
 }
 
@@ -254,57 +258,52 @@ body {
     75% { transform: rotate(-10deg); }
     100% { transform: rotate(0deg); }
 }
-
-/* ===========================
-   PHẦN CHO ĐỊA CHỈ LIÊN HỆ
-   =========================== */
-
-/* Tùy ý "biến" span thành dạng link hay nút */
-.oval-button span {
+.oval-button span{
     display: flex;
     align-items: center;
     gap: 8px;
-    background: none; /* Bỏ nền nếu không muốn giống nút */
-    border: none;     /* Bỏ viền */
-    border-radius: 0; /* Bỏ bo góc */
+    background: linear-gradient(#D4EE8C, #CFEABF);
+    border-radius: 50px;
+    padding: 6px 10px;
     color: #2E4F35;
     font-size: 16px;
-    text-decoration: underline; /* Giống link, tùy ý */
-    cursor: pointer;
+    border: none;
 }
-
 .oval-button {
+    position: relative; 
     display: inline-block;
-    margin-right: 10px; /* Khoảng cách giữa các .oval-button */
+    cursor: pointer;
 }
 
 .oval-button img {
     width: 20px;
     height: auto;
 }
-
-/* Popup Address */
 .popup-address {
     position: absolute;
     top: 122%;
     left: 0;  
     align-content: center;
     justify-content: center;
+    width: max-content;  
+    max-width: 100vw;  
     background: white;
     border-radius: 0 0 10px 10px;
     padding: 16px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     text-align: left;
     z-index: 1000;
-    display: flex;
+    display: none;
     line-height: 1.4; 
 }
-
-/* Hover vào #btn-address => hiển thị #popup-address */
-#btn-address:hover ~ #popup-address,
-.popup-address:hover {
-    display: block;
-    opacity: 1;
+.popup-address::before {
+    content: "";
+    position: absolute;
+    top: -15px; 
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: transparent;
 }
 
 .popup-address-content {
@@ -320,6 +319,9 @@ body {
 .popup-address-right {
     flex: 1;
 }
+.oval-button:hover .popup-address {
+    display: flex; 
+}
 
 .popup-header {
     background: #2E8B57;
@@ -330,6 +332,7 @@ body {
     border-top-right-radius: 8px;
     text-align: center;
 }
+
 
 .popup-address p {
     margin: 8px 0;
