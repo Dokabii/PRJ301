@@ -1,46 +1,201 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Feb 28, 2025, 10:29:08 AM
-    Author     : admin
-*/
-
+/* styles.css */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Giữ nguyên kích thước phần tử */
     font-family: Arial;
 }
 
-.right a, .social-links a, .top-header, .cart, .oval-button, .phone-info, .category button {
-    font-size: 14px !important; /* Kích thước chữ chuẩn theo Header */
-    font-weight: bold;
-}
 
 body {
     background-color: #f5f5f5; /* Màu nền theo ý bạn */
 }
 
-/* 🌿 CSS cho thanh header trên cùng */
-.top-header {
-    background-color: #269576;
-    color: white;
-    padding: 8px 0;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-.top-header .container {
+.top_header {
+    background-color: #269576;
+    padding: 10px 20px;
+    height: 40px;
+}
+
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-    padding: 0 30px; /* Giảm khoảng cách 2 bên */
-    /* Để popup định vị theo .container, có thể thêm position: relative; 
-       Hoặc thêm trực tiếp inline style: <div class="container" style="position: relative;"> 
-    */
 }
+
+.left-section, .center-section, .right-section{
+    display: flex;
+    align-items: center;
+    font-size: 14px !important;
+    font-weight: bold;
+
+}
+
+.left-section button{
+    background: linear-gradient(#D4EE8C, #CFEABF);
+    border-radius: 50px;
+    color: #2E4F35;
+    font-size: 14px;
+    font-weight: bold;
+}
+.right-section a{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; 
+    padding: 0px 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.right-section img{
+    height: 30px;
+    width: auto;
+    padding: 5px;
+}
+
+.btn, .news-btn, .login-btn {
+    background-color: #cce5b8;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 8px;
+    border-radius: 16px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.btn i, .news-btn i, .login-btn i {
+    margin-right: 5px;
+}
+
+.btn img {
+    width: 18px;
+    height: 20px;
+    padding: 0px 4px;
+}
+
+.center-section a {
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 14px;
+}
+
+
+.center-section a:hover, 
+.right-section a:hover {
+    transform: scale(1.2);
+}
+.center-section {
+    flex: 1; /* Lấp đầy khoảng trống giữa */
+    display: flex;
+    justify-content: flex-start; /* Căn trái */
+    align-items: center;
+}
+
+.center-section img{
+    height: 26px;
+    width: auto;
+    padding-right: 8px;
+}
+
+.center-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;  /* Sai */
+    transform: translate(-50%, -50%);  /* Sai */
+    top: 10px; /* Căn theo header */
+    transform: translateX(-50%); /* Chỉ dịch theo chiều ngang */
+    z-index: 9999;
+}
+
+
+.mid-btn {
+    opacity: 0; /* Làm cho nút vô hình */
+    position: absolute;
+    z-index: 1; /* Đưa ra sau các phần tử khác */
+}
+
+
+.tooltip {
+    display: none;
+    position: absolute;
+    width: 90vw;
+    left: 50%;
+    top: 50px; /* Hiển thị ngay dưới "Nút Giữa" */
+    transform: translateX(-50%);
+    background: #fff;
+    color: black;
+    border-radius: 8px;
+    font-size: 16px;
+    white-space: nowrap;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    will-change: transform;
+
+}
+.tooltip::before {
+    content: "";
+    position: absolute;
+    top: -20px; /* Mở rộng vùng hover lên trên */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Độ cao vùng hover */
+    background: transparent;
+}
+.tooltip-container{
+    display: flex;
+    flex-direction: row; /* Chia thành 2 cột: trái và phải */
+    gap: 10px;
+}
+.tooltip-left, .tooltip-right {
+    flex: 1; /* Giúp hai phần chia đều */
+    padding: 20px;
+    text-align: left;
+    min-width: 0; /* Đảm bảo không bị tràn */
+}
+.tooltip a{
+    line-height: 2;
+    text-decoration: none;
+    color: black;
+}
+
+.tooltip-left a:hover {
+    color: #2E8B57;
+}
+
+
+.tooltip-right iframe{
+    width: 100%;
+    height: 200px;
+    border-radius: 6px; 
+    border: black; 
+}
+.tooltip-header {
+    font-size: 18px;
+    font-weight: bold;
+    background: #269576;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-align: left;
+}
+.mid-btn:hover ~ .tooltip,
+.hover-area:hover ~ .tooltip,
+.tooltip:hover {
+    display: block;
+}
+
+
+/*-----------------------------MAIN HEADER----------------------------*/
 
 /* 🌿 CSS cho header chính */
 .main-header {
@@ -55,20 +210,119 @@ body {
     align-items: center;
     margin: 0 auto;
     padding: 0 120px; /* Giảm khoảng cách 2 bên */
+
+}
+.category{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+/*    z-index: 1;*/
 }
 
-.category button {
+.category button{
     background: #269576;
-    padding: 15px;
-    border-radius: 7px;
+    padding: 18px;
     border: none;
     color: white;
     font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+.submenu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.category:hover .submenu {
+    display: block;
+    color: #269576;
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: black;
+    display: flex; /* Giúp icon nằm trên cùng một hàng với chữ */
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap; /* Ngăn chữ xuống dòng */
+    width: 100%; /* Đảm bảo toàn bộ phần tử có đủ không gian */
+}
+.submenu {
+    list-style: none; /* Bỏ dấu chấm */
+    padding: 10px; /* Thêm khoảng cách giữa nội dung và viền */
+    margin: 0;
+}
+
+.submenu li {
+    list-style: none;
+    padding: 8px 12px; /* Thêm khoảng cách giữa nội dung và viền */
+}
+.submenu li a,
+.submenu-right li a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    width: 100%;
+    padding: 10px 15px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Đổi màu nền khi hover */
+.submenu li:hover,
+.submenu-right li:hover {
+    background: #f5f5f5;
+}
+
+/* Chỉ đổi màu chữ và in đậm khi hover */
+.submenu li:hover > a,
+.submenu-right li:hover > a {
+    color: #269576;
+    font-weight: bold;
+}
+.has-submenu::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 15px; /* Khoảng cách mở rộng */
+    height: 100%;
+    background: transparent; /* Vùng hover ảo */
+}
+.submenu-right {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Hiện submenu con bên phải */
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: nowrap; /* Giữ nội dung không bị xuống dòng */
+}
+
+
+/* Khi di chuột vào .has-submenu thì hiển thị .submenu-right */
+.has-submenu:hover .submenu-right,
+.has-submenu:focus-within .submenu-right,
+.submenu-right:hover {
+    display: block;
 }
 
 .search-bar {
     display: flex;
     align-items: center;
+    justify-content: center;
     background: white;
     padding: 10px 15px;
     border-radius: 25px;
@@ -95,9 +349,10 @@ body {
 }
 
 .search-bar img {
-    width: 10px;  /* Điều chỉnh kích thước ảnh */
+    width: 25px;  /* Điều chỉnh kích thước ảnh */
     height: auto;
 }
+
 
 .cart {
     display: flex;
@@ -106,16 +361,12 @@ body {
     font-weight: bold;
 }
 
-.category button {
-    font-weight: bold; /* In đậm chữ */
-}
-
 .logo img {
     height: 135px; 
     width: auto;
 }
 
-.cart img {
+.cart img{
     height: 37px;
     width: auto;
 }
@@ -136,83 +387,27 @@ body {
     color: inherit; /* Dùng màu chữ của phần tử cha */
 }
 
-.social-links img {
-    height: 26px;
-    width: auto;
-    padding-right: 8px;
-}
-
-.left {
-    display: flex;
-    align-items: center; 
-    gap: 10px; 
-}
-
-.right {
-    display: flex;
-    flex-wrap: nowrap; 
-    gap: 10px;
-}
-
-.right a {
-    display: flex;
-    flex-wrap: nowrap; 
-    align-items: center; 
-    gap: 5px; 
-    text-decoration: none;
-    color: white;
-}
-
-.right img {
-    height: 30px;
-    width: auto;
-    padding-right: 3px;
-}
-
-.social-links {
-    display: flex;
-    gap: 10px;
-    list-style: none; 
-    padding: 0;
-    font-size: 14px;
-}
-
-.social-links li {
-    display: flex;
-    align-items: center; 
-}
-
-.social-links li a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-}
-
 .menu-search {
     display: flex;
+    align-items: center;
     flex-wrap: nowrap; 
     gap: 10px;
 }
 
-.phone {
+.phone{
     display: flex;
     align-content: center;
     justify-content: center;
     flex-wrap: nowrap; 
     gap: 20px;
-}
+        color: black;
 
-.phone {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    color: black;
 }
 
 .phone img {
     height: 70px; 
     width: auto;
+
 }
 
 .phone-info {
@@ -221,30 +416,31 @@ body {
     line-height: 1.4; 
 }
 
-.phone-info strong {
+
+.phone-info a {
     font-size: 16px;
     font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+.phone-info a:hover{
+    color: #2E8B57;
 }
 
 .phone-info span {
     font-size: 14px;
-    color: #2c8d72; /* Màu xanh */
-}
-
-.phone-info a {
-    text-decoration: none;
-    color: darkslategrey;
-    font-weight: bold;
-}
-
-.shake img {
-    animation: shake 0.7s infinite alternate;
+    color: #2c8d72; 
 }
 
 @media (max-width: 1100px) {
     .social-links {
         display: none;
     }
+}
+
+.shake img{
+    animation: shake 0.7s infinite alternate;
+    z-index: 0;
 }
 
 @keyframes shake {
@@ -254,90 +450,23 @@ body {
     75% { transform: rotate(-10deg); }
     100% { transform: rotate(0deg); }
 }
-
-/* ===========================
-   PHẦN CHO ĐỊA CHỈ LIÊN HỆ
-   =========================== */
-
-/* Tùy ý "biến" span thành dạng link hay nút */
-.oval-button span {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: none; /* Bỏ nền nếu không muốn giống nút */
-    border: none;     /* Bỏ viền */
-    border-radius: 0; /* Bỏ bo góc */
-    color: #2E4F35;
-    font-size: 16px;
-    text-decoration: underline; /* Giống link, tùy ý */
-    cursor: pointer;
+.falling-leaf {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    pointer-events: none;
+    animation: fall linear infinite;
 }
 
-.oval-button {
-    display: inline-block;
-    margin-right: 10px; /* Khoảng cách giữa các .oval-button */
-}
 
-.oval-button img {
-    width: 20px;
-    height: auto;
-}
-
-/* Popup Address */
-.popup-address {
-    position: absolute;
-    top: 122%;
-    left: 0;  
-    align-content: center;
-    justify-content: center;
-    background: white;
-    border-radius: 0 0 10px 10px;
-    padding: 16px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: left;
-    z-index: 1000;
-    display: flex;
-    line-height: 1.4; 
-}
-
-/* Hover vào #btn-address => hiển thị #popup-address */
-#btn-address:hover ~ #popup-address,
-.popup-address:hover {
-    display: block;
-    opacity: 1;
-}
-
-.popup-address-content {
-    display: flex;
-    gap: 20px;
-    padding-top: 10px;
-}
-
-.popup-address-left {
-    flex: 1;
-}
-
-.popup-address-right {
-    flex: 1;
-}
-
-.popup-header {
-    background: #2E8B57;
-    color: white;
-    font-weight: bold;
-    padding: 10px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    text-align: center;
-}
-
-.popup-address p {
-    margin: 8px 0;
-    font-size: 15px;
-    color: #333;
-}
-
-.popup-address i {
-    margin-right: 8px;
-    color: #2E8B57;
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
 }
